@@ -3,8 +3,11 @@ import cors from 'cors';
 import helmet from 'helmet';
 
 import { FRONTEND_URL } from './envConfig.js';
+import { httpLogger } from './logger.js';
 
 const app = express();
+
+app.use(httpLogger);
 
 app.use(helmet());
 
